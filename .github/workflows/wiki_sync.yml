@@ -30,12 +30,10 @@ jobs:
     # GoPlantUML https://github.com/jfeliu007/goplantuml
     - name: Install GoPlantUML
       run: |
-        go get github.com/jfeliu007/goplantuml/parser
-        go get github.com/jfeliu007/goplantuml/cmd/goplantuml
         go install github.com/jfeliu007/goplantuml
         goplantuml
       env:
         GOPATH: /home/runner/go
 
     - name: Generate PUML
-      run: goplantuml -recursive -output output.puml .\
+      run: goplantuml -recursive .\
