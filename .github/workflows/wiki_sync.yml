@@ -30,6 +30,7 @@ jobs:
     # GoPlantUML https://github.com/jfeliu007/goplantuml
     - name: Install GoPlantUML
       run: |
+        go clean -modcache
         go install github.com/jfeliu007/goplantuml
         goplantuml
       env:
