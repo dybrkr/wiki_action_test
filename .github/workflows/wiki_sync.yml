@@ -35,7 +35,6 @@ jobs:
 #        cd $GOPATH/src/github.com/jfeliu007/goplantuml
         go install github.com/jfeliu007/goplantuml
         goplantuml
-
       env:
         GOPATH: /home/runner/go
 
