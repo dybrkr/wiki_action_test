@@ -16,6 +16,18 @@ jobs:
       with:
         go-version: ^1.15
 
+    - name: Setup Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11.0.4' # The JDK version to make available on the path.
+        java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+        architecture: x64 # (x64 or x86) - defaults to x64
+
+    - name: Install Graphviz
+      run: |
+        apt update
+        apt install graphviz
+
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
@@ -37,12 +49,6 @@ jobs:
       env:
         GOPATH: /home/runner/go
         GO111MODULE: off
-    - name: Setup Java
-      uses: actions/setup-java@v1
-      with:
-        java-version: '11.0.4' # The JDK version to make available on the path.
-        java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
-        architecture: x64 # (x64 or x86) - defaults to x64
     - name: Generate UML
       run: |
         goplantuml -recursive -output output.puml ./
