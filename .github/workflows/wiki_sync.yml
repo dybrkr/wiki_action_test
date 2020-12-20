@@ -46,5 +46,7 @@ jobs:
         java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
         architecture: x64 # (x64 or x86) - defaults to x64
     - name: Generate SVG
-      run: java -jar .\third_party\plantuml.jar .\output.puml -v
+      run: |
+        pwd
+        java -jar .\third_party\plantuml.jar .\output.puml -v
 
