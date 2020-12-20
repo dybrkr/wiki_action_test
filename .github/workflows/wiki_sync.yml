@@ -48,5 +48,5 @@ jobs:
     - name: Generate SVG
       run: |
         pwd
-        java -jar .\third_party\plantuml.jar .\output.puml -v
+        java -jar ./third_party/plantuml.jar ./output.puml -v
 
