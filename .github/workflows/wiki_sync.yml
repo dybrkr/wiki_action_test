@@ -30,13 +30,12 @@ jobs:
     # GoPlantUML https://github.com/jfeliu007/goplantuml
     - name: Install GoPlantUML
       run: |
-        export GO111MODULE=off
         go get github.com/jfeliu007/goplantuml/parser
         go get github.com/jfeliu007/goplantuml/cmd/goplantuml
         cd $GOPATH/src/github.com/jfeliu007/goplantuml
         go install ./...
       env:
         GOPATH: /home/runner/go
-
+        GO111MODULE: off
     - name: Generate PUML
       run: goplantuml -recursive .\
